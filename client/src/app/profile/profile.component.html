@@ -59,7 +59,8 @@
 
         <!-- all post -->"
         <div class="card mb-4" border-style="inset" *ngFor="let post of Posts">
-          <div *ngIf="type(post.title)">
+            <!-- <b>{{post.title}}</b> -->
+          <div *ngIf="post.title">
             <div class="card-body">
               <h2 class="card-title">
                 <b>{{post.title}}</b>

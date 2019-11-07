@@ -67,8 +67,21 @@ console.log('skdfhjdhf')
             this.Posts = data['posts']; // Assign array to use in HTML
            var a= JSON.parse(JSON.stringify(data));
           //  const mapped = Object.keys(data).map(key => ({type: key, value: data[key]}));
-           const mapped = Object.entries(data).map(([type, value]) => ({type, value}));
-            console.log(this.date)
+          console.log(data)
+
+           const mapped = Object.entries(data).map(([type, value]) => ([value]));
+            console.log(mapped)
+            var postData = []
+            const arr = mapped[1]
+            for(var i = 0; i < arr.length; i++) {
+              for(data of arr[i]){
+                console.log(data)
+                postData.push(data)
+              }
+             
+          }
+          this.Posts = postData
+          console.log(postData)
             // for(var aa of mapped){
             //   console.log(aa)
             // }
