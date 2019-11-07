@@ -18,4 +18,16 @@ export class ApiService {
     return this.http.post(this.url + '/registerUser', formData);;
   }
   
+  setToken(token: string) {
+    localStorage.setItem('token', token);
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  deleteToken() {
+    localStorage.removeItem('token');
+  }
+
 }
