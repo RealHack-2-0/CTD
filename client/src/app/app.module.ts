@@ -10,6 +10,7 @@ import { RatingComponent } from './Questions/rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 
 
@@ -27,6 +28,7 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FlashMessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

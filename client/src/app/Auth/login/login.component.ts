@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,19 +14,23 @@ export class LoginComponent implements OnInit {
     password:''
   };
   serverErrorMessages: string;
-  constructor(public service :ApiService) { }
+  constructor(public service :ApiService,public router : Router) { }
 
   ngOnInit() {
+    if(this.service.isLoggedIn())
+    this.router.navigateByUrl('/userprofile');
   }
   onSubmit(form : NgForm){
     console.log(form.value);
     this.service.login(form.value).subscribe(
       res => {
-        // this.service.setToken(res['token']);
-        // this.router.navigateByUrl('/userprofile');
+        console.log(res)
+        this.service.setToken(res['token']);
+        this.router.navigateByUrl('/userprofile');
       },
       err => {
         this.serverErrorMessages = err.error.message;
+        console.log(err)
       }
     );
   }
