@@ -10,6 +10,8 @@ import { RatingComponent } from './Questions/rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
 
 
 
@@ -27,6 +29,9 @@ import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FroalaEditorModule.forRoot(), 
+    FroalaViewModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

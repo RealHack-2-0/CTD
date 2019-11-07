@@ -1,3 +1,22 @@
-<p>
-  questions works!
-</p>
+
+
+  <div class="Question">
+
+
+      <form class = "form-login" #f="ngForm" (ngSubmit)="submitQuestion(f.value)" [formGroup]="form">
+        <h1 class="h3 mb-3 font-weight-normal">Ask Your Question Here</h1>
+        <label for="Question">Question</label>
+        <input
+           formControlName="question"
+           type="email"
+           id="inputEmail"
+           ngModel class="form-control"
+           placeholder="Enter Your Question Here!">
+        <br>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ask</button>
+        <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+      </form>
+
+     
+</div>
