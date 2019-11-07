@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input }   from '@angular/core';
+import { RegserviceService } from './servers/regservice.service';
 import { Router } from '@angular/router';
-import { ApiService } from './api.service';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+@Component ({
+    selector:     'app-component'
+    ,templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'client';
-  constructor(public servive:ApiService,public router:Router) {
-  }
-  onLogout(){
-    this.servive.deleteToken();
-    this.router.navigate(['/login']);
-        }
+
+export class AppComponent implements OnInit {
+    
+    constructor(public servive:RegserviceService,public router:Router) {
+    }
+    onLogout(){
+this.servive.deleteToken();
+this.router.navigate(['/login']);
+    }
+    ngOnInit() {}
 }
