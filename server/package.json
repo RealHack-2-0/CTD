@@ -1,0 +1,22 @@
+{
+  "name": "rhackbackend",
+  "version": "1.0.0",
+  "description": "RealHackServer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./app.js",
+    "dev": "nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chiranga",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.3"
+  },
+  "devDependencies": {
+    "mongoose": "^5.7.8",
+    "nodemon": "^1.19.4"
+  }
+}
