@@ -8,6 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionsComponent implements OnInit {
 
   constructor() { }
+  public id;
+  post;
+  message;
+rate=3;
+  userDetails;
+  //
+  username = "charindu"
+  public userId;
+  public user = { 
+    userId: ''
+  };
+
 
   ngOnInit() {
   }
