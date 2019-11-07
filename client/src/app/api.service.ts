@@ -10,7 +10,12 @@ export class ApiService {
 
   login(authCredentials) {
     console.log(authCredentials);
-    return this.http.post(this.url + '/authenticate', authCredentials);
+    return this.http.post(this.url + '/logging', authCredentials);
+  }
+
+  register(formData){
+    console.log(formData)
+    return this.http.post(this.url + '/registerUser', formData);;
   }
   
 }
