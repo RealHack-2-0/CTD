@@ -1,4 +1,4 @@
-<section style="background:#efefe9;">
+<!-- <section style="background:#efefe9;">
 
   <div class="container">
 
@@ -24,7 +24,7 @@
                   <label class="validation-message">Minimum 4 characters.</label>
                 </div>
               </div>
-              <input type="submit" class="btn btn-success btn-outline-rounded btn-info " value="Sign In">
+              <input type="submit" class="btn btn-success btn-outline-rounded btn-info" value="Sign In">
             </div>
           </div>
         </div>
@@ -35,9 +35,54 @@
       </div>
 
     </div>
-    <!-- End Content Area -->
   </div>
 
 
 
-</section>
+
+
+</section> -->
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="User.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form #signInForm="ngForm" (ngSubmit)="signInForm.valid && onSubmit(signInForm)">
+        <input class="fadeIn second" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" name="login" type="text" id="login" placeholder="Email" [(ngModel)]="model.email">
+        <div *ngIf="signInForm.submitted && email.errors?.pattern">
+          <label class="validation-message">Invalid email address.</label>
+        </div>
+      <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="email"> -->
+
+      <input class="fadeIn third" #password="ngModel" pattern=".{6,}" required id="password" name="login" type="text" id="password" placeholder="password" [(ngModel)]="model.password">
+                <div *ngIf="signInForm.submitted && password.errors?.minlength">
+                  <label class="validation-message">Minimum 4 characters.</label>
+                </div>
+      <!-- <input type="text" id="password" class="fadeIn third" name="login" placeholder="password"> -->
+      
+      
+      
+      <input type="submit" class="fadeIn fourth" value="Sign In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
+  </div>
+</div>

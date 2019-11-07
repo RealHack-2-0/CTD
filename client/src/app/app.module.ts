@@ -6,10 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { RegisterComponent } from './Auth/register/register.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { RatingComponent } from './Questions/rating/rating.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RatingComponent } from './questions/rating/rating.component';
 
 
 
