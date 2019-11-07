@@ -1,0 +1,15 @@
+{
+    "development": {
+        "PORT": 3000,
+       "MONGODB_URI" :"mongodb://chirangaw186:twinturbov8@ds241268.mlab.com:41268/realhackdb",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "20m"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb://xxxxx/DB_Name",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "2m"
+    }
+}
+

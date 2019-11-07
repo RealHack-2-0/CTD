@@ -1,22 +1,24 @@
 {
-  "name": "rhackbackend",
+  "name": "ph",
   "version": "1.0.0",
-  "description": "RealHackServer",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./app.js",
-    "dev": "nodemon ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chiranga",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongodb": "^3.3.3"
-  },
-  "devDependencies": {
-    "mongoose": "^5.7.8",
-    "nodemon": "^1.19.4"
+    "bcrypt": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "js": "^0.1.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.12",
+    "nodemailer": "^4.6.8",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
   }
 }
