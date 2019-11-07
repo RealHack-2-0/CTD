@@ -52,4 +52,10 @@ export class ApiService {
     else
       return null;
   }
+
+  getAllPosts() {
+    return this.http.get(this.url + '/all');
+  }
+
+  
 }

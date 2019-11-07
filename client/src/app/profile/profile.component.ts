@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-profile',
@@ -35,16 +35,16 @@ console.log('skdfhjdhf')
     this.newpost.body = '';
     this.isloading = false
     this.getAllPosts();
-    this.service.getUserProfile().subscribe(
-      res => {
-        this.userDetails = res['user'];
-        this.newpost.createdBy = this.userDetails.firstName
-        console.log(res);
-      },
-      err => {
-        console.log(err);
+    // this.service.getUserProfile().subscribe(
+    //   res => {
+    //     this.userDetails = res['user'];
+    //     this.newpost.createdBy = this.userDetails.firstName
+    //     console.log(res);
+    //   },
+    //   err => {
+    //     console.log(err);
 
-      });
+    //   });
 
   }
 
@@ -62,7 +62,21 @@ console.log('skdfhjdhf')
   Posts;
   getAllPosts() {
     // Function to GET all Posts from database
-
+    this.service.getAllPosts().subscribe(data => {
+     
+            this.Posts = data['posts']; // Assign array to use in HTML
+           var a= JSON.parse(JSON.stringify(data));
+          //  const mapped = Object.keys(data).map(key => ({type: key, value: data[key]}));
+           const mapped = Object.entries(data).map(([type, value]) => ({type, value}));
+            console.log(this.date)
+            // for(var aa of mapped){
+            //   console.log(aa)
+            // }
+            // mapped.forEach(element => {
+            //   console.log(element)
+            // });
+    });
+    
   }
 
 

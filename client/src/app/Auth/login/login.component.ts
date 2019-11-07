@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(public service :ApiService,public router : Router) { }
 
   ngOnInit() {
+    if(this.service.isLoggedIn())
+    this.router.navigateByUrl('/userprofile');
   }
   onSubmit(form : NgForm){
     console.log(form.value);
